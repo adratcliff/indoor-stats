@@ -43,7 +43,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       target: 'esnext',
-      minify: env.VITE_MINIFY === 'true',
+      minify: false, // env.VITE_MINIFY === 'true',
       cssCodeSplit: env.VITE_CSS_CODE_SPLIT === 'true',
     },
     optimizeDeps: {
