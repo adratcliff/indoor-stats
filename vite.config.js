@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => {
         remotes: {
           shared: `${env.VITE_REMOTE_MODULE_BASE}${mode === 'production' ? '' : '8070'}/assets/remoteEntry.js`,
         },
-        shared: ['vue', 'vuetify']
+        shared: ['vue', 'vuetify', 'vue-router']
       }),
     ],
     resolve: {
