@@ -51,7 +51,7 @@
             v-for="column in columns"
             :key="`sub-${subRow.id}-${column.key}`"
             :class="[
-              'bg-surface-variant',
+              'themed-sub-cell',
               column.align === 'end' ? 'text-end' : 'text-start',
             ]">
             <template v-if="column.key === 'data-table-select'"></template>
@@ -234,3 +234,18 @@ onMounted(async () => {
   }
 });
 </script>
+
+<style scoped>
+:deep(.aligned-expansion-table tbody tr.sub-row-alignment) {
+  display: contents !important;
+}
+
+.themed-sub-cell {
+  background-color: rgba(var(--v-theme-on-surface), 0.04) !important;
+  border-bottom: 1px solid rgba(var(--v-theme-on-surface), 0.08) !important;
+}
+
+.themed-sub-cell :deep(span) {
+  color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+}
+</style>
